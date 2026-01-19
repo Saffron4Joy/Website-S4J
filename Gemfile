@@ -1,9 +1,11 @@
 source "https://rubygems.org"
 
-# Using Jekyll 3.9 for compatibility with Ruby 2.6 (macOS default)
-# Upgrade to Jekyll 4.x when Ruby 2.7+ is available
-gem "jekyll", "~> 3.9"
+# Jekyll 3.9 works with GitHub Pages and Ruby 2.6+
+gem "jekyll", "~> 3.9.0"
 gem "webrick", "~> 1.7"
+
+# Lock ffi to older version that works with Ruby 2.6
+gem "ffi", "~> 1.15.0"
 
 group :jekyll_plugins do
   gem "jekyll-paginate"

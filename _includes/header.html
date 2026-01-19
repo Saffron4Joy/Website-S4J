@@ -1,0 +1,29 @@
+<header class="site-header" id="site-header">
+  <div class="container">
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="{{ '/' | relative_url }}" class="logo" aria-label="Saffron for Joy - Home">
+        <img src="{{ '/assets/images/logo.jpg' | relative_url }}" alt="Saffron for Joy" class="logo-image">
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+        <span class="hamburger"></span>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
+        <li><a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}class="active"{% endif %}>About</a></li>
+        <li><a href="{{ '/how-it-works/' | relative_url }}" {% if page.url == '/how-it-works/' %}class="active"{% endif %}>How It Works</a></li>
+        <li><a href="{{ '/recipes/' | relative_url }}" {% if page.url contains '/recipes' %}class="active"{% endif %}>Recipes</a></li>
+        <li><a href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog' %}class="active"{% endif %}>Blog</a></li>
+        <li><a href="{{ '/shop/' | relative_url }}" {% if page.url == '/shop/' %}class="active"{% endif %}>Shop</a></li>
+        <li><a href="{{ '/contact/' | relative_url }}" {% if page.url == '/contact/' %}class="active"{% endif %}>Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn btn--outline btn--small newsletter-trigger" data-modal="newsletter-modal">
+          Subscribe
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>

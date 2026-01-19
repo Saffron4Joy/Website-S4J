@@ -1,0 +1,140 @@
+---
+layout: home
+title: Home
+description: "Discover the magic of saffron through delicious recipes, wellness tips, and the health benefits of the world's most precious spice."
+keywords: "saffron recipes, wellness, health benefits, saffron benefits, cooking with saffron"
+---
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-background" style="background-image: url('/assets/images/hero-bg.svg')"></div>
+  <div class="container">
+    <div class="hero-content">
+      <span class="hero-tagline">Welcome to Saffron for Joy</span>
+      <h1 class="hero-title">Discover the Magic of <span>Saffron</span></h1>
+      <p class="hero-description">Elevate your cooking and wellness journey with the world's most precious spice. Explore authentic recipes, unlock health benefits, and bring warmth to every dish.</p>
+      <div class="hero-cta">
+        <a href="{{ '/recipes/' | relative_url }}" class="btn btn--primary btn--large">Explore Recipes</a>
+        <a href="{{ '/how-it-works/' | relative_url }}" class="btn btn--outline btn--large">Learn Benefits</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Recipes Section -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tagline">From Our Kitchen</span>
+      <h2 class="section-title">Featured Recipes</h2>
+      <p class="section-description">Handpicked recipes that showcase the versatility and beauty of saffron in every bite.</p>
+    </div>
+
+    <div class="recipes-grid">
+      {% assign featured_recipes = site.recipes | where: "featured", true | limit: 4 %}
+      {% if featured_recipes.size == 0 %}
+        {% assign featured_recipes = site.recipes | limit: 4 %}
+      {% endif %}
+      {% for recipe in featured_recipes %}
+        {% include recipe-card.html recipe=recipe %}
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-2xl">
+      <a href="{{ '/recipes/' | relative_url }}" class="btn btn--outline">View All Recipes</a>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits Preview Section -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tagline">The Red Gold</span>
+      <h2 class="section-title">Why Saffron?</h2>
+      <p class="section-description">For centuries, saffron has been treasured not just for its flavor, but for its remarkable health benefits.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/><circle cx="12" cy="12" r="5"/></svg>
+        </div>
+        <h3>Mood Enhancement</h3>
+        <p>Natural compounds in saffron have been shown to help improve mood and reduce symptoms of mild depression.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3>Anti-Inflammatory</h3>
+        <p>Rich in antioxidants like crocin and crocetin that help reduce inflammation throughout the body.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
+        </div>
+        <h3>Better Sleep</h3>
+        <p>Studies suggest saffron may help improve sleep quality and duration for more restful nights.</p>
+      </div>
+    </div>
+
+    <div class="text-center mt-2xl">
+      <a href="{{ '/how-it-works/' | relative_url }}" class="btn btn--primary">Discover All Benefits</a>
+    </div>
+  </div>
+</section>
+
+<!-- Latest Blog Posts -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tagline">From the Blog</span>
+      <h2 class="section-title">Latest Stories</h2>
+      <p class="section-description">Inspiration, tips, and insights for your saffron journey.</p>
+    </div>
+
+    <div class="posts-grid">
+      {% for post in site.posts limit:3 %}
+        {% include post-card.html post=post %}
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-2xl">
+      <a href="{{ '/blog/' | relative_url }}" class="btn btn--outline">Read the Blog</a>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="newsletter-section">
+  <div class="container">
+    <h2>Join Our Community</h2>
+    <p>Subscribe for exclusive recipes, wellness tips, and early access to new products.</p>
+    <form class="newsletter-form" action="https://formspree.io/f/{{ site.formspree_id }}" method="POST">
+      <input type="email" name="email" placeholder="Enter your email address" required>
+      <input type="hidden" name="_subject" value="New Newsletter Subscriber">
+      <button type="submit" class="btn btn--primary">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- About Preview -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="about-intro">
+      <div class="about-image">
+        <img src="{{ '/assets/images/about-preview.svg' | relative_url }}" alt="About Saffron for Joy">
+      </div>
+      <div class="about-text">
+        <span class="section-tagline">Our Story</span>
+        <h2>A Passion for Saffron</h2>
+        <p>Saffron for Joy was born from a deep love of cooking, wellness, and the desire to share the incredible benefits of the world's most precious spice with everyone.</p>
+        <p>We believe that cooking with saffron is more than just adding a spice to a dish; it's about embracing a tradition of health, flavor, and joy that spans thousands of years.</p>
+        <a href="{{ '/about/' | relative_url }}" class="btn btn--outline mt-lg">Learn More About Us</a>
+      </div>
+    </div>
+  </div>
+</section>

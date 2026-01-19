@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect fill="#F7F3ED" width="400" height="300"/>
+  <rect fill="#E8DED1" x="20" y="20" width="360" height="260" rx="8"/>
+  <circle fill="#D4752E" cx="200" cy="130" r="40" opacity="0.3"/>
+  <text x="200" y="220" font-family="Georgia, serif" font-size="14" fill="#8B7E74" text-anchor="middle">Recipe image</text>
+</svg>

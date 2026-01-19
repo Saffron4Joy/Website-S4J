@@ -1,0 +1,112 @@
+---
+layout: page
+title: Recipes
+subtitle: Saffron-Inspired Dishes for Every Occasion
+permalink: /recipes/
+description: "Discover our collection of delicious saffron recipes, from traditional favorites to modern creations."
+keywords: "saffron recipes, cooking with saffron, saffron dishes, healthy recipes"
+---
+
+<div class="blog-filters">
+  <div class="blog-search">
+    <input type="text" placeholder="Search recipes..." id="recipe-search">
+  </div>
+  <div class="blog-categories">
+    <button class="category-filter active" data-category="all">All Recipes</button>
+    <button class="category-filter" data-category="main">Main Dishes</button>
+    <button class="category-filter" data-category="dessert">Desserts</button>
+    <button class="category-filter" data-category="drinks">Drinks</button>
+    <button class="category-filter" data-category="breakfast">Breakfast</button>
+  </div>
+</div>
+
+<div class="recipes-grid">
+  {% for recipe in site.recipes %}
+  <article class="recipe-card" data-category="{{ recipe.category }}">
+    <a href="{{ recipe.url | relative_url }}" class="recipe-card-link">
+      <div class="recipe-card-image">
+        {% if recipe.image %}
+        <img src="{{ recipe.image | relative_url }}" alt="{{ recipe.title }}" loading="lazy">
+        {% else %}
+        <div class="recipe-card-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+        {% endif %}
+        {% if recipe.category %}
+        <span class="recipe-card-category">{{ recipe.category }}</span>
+        {% endif %}
+      </div>
+      <div class="recipe-card-content">
+        <h3 class="recipe-card-title">{{ recipe.title }}</h3>
+        {% if recipe.description %}
+        <p class="recipe-card-description">{{ recipe.description | truncate: 100 }}</p>
+        {% endif %}
+        <div class="recipe-card-meta">
+          {% if recipe.prep_time or recipe.cook_time %}
+          <span class="recipe-card-time">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            {{ recipe.prep_time | default: 0 | plus: recipe.cook_time | default: 0 }} min
+          </span>
+          {% endif %}
+          {% if recipe.difficulty %}
+          <span class="recipe-card-difficulty">{{ recipe.difficulty }}</span>
+          {% endif %}
+        </div>
+      </div>
+    </a>
+  </article>
+  {% endfor %}
+</div>
+
+{% if site.recipes.size == 0 %}
+<div class="text-center mt-3xl">
+  <p>No recipes yet. Check back soon!</p>
+</div>
+{% endif %}
+
+<section class="newsletter-section mt-3xl">
+  <div class="container">
+    <h2>Get New Recipes in Your Inbox</h2>
+    <p>Be the first to know when we publish new saffron recipes.</p>
+    <form class="newsletter-form" action="https://formspree.io/f/{{ site.formspree_id }}" method="POST">
+      <input type="email" name="email" placeholder="Enter your email address" required>
+      <input type="hidden" name="_subject" value="Newsletter Signup - Recipes Page">
+      <button type="submit" class="btn btn--primary">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('recipe-search');
+  const categoryFilters = document.querySelectorAll('.category-filter');
+  const recipeCards = document.querySelectorAll('.recipe-card');
+
+  function filterRecipes() {
+    const searchTerm = searchInput.value.toLowerCase().trim();
+    const activeCategory = document.querySelector('.category-filter.active').getAttribute('data-category');
+
+    recipeCards.forEach(function(card) {
+      const title = card.querySelector('.recipe-card-title').textContent.toLowerCase();
+      const description = card.querySelector('.recipe-card-description');
+      const descText = description ? description.textContent.toLowerCase() : '';
+      const cardCategory = card.getAttribute('data-category') || '';
+
+      const matchesSearch = !searchTerm || title.includes(searchTerm) || descText.includes(searchTerm);
+      const matchesCategory = activeCategory === 'all' || cardCategory.toLowerCase() === activeCategory.toLowerCase();
+
+      card.style.display = (matchesSearch && matchesCategory) ? '' : 'none';
+    });
+  }
+
+  searchInput.addEventListener('input', filterRecipes);
+
+  categoryFilters.forEach(function(filter) {
+    filter.addEventListener('click', function() {
+      categoryFilters.forEach(f => f.classList.remove('active'));
+      this.classList.add('active');
+      filterRecipes();
+    });
+  });
+});
+</script>

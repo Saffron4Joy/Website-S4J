@@ -1,0 +1,30 @@
+<div class="modal" id="newsletter-modal" aria-hidden="true">
+  <div class="modal-overlay" data-modal-close></div>
+  <div class="modal-content" role="dialog" aria-labelledby="newsletter-modal-title">
+    <button class="modal-close" data-modal-close aria-label="Close modal">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+
+    <div class="modal-body">
+      <div class="newsletter-modal-content">
+        <div class="newsletter-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h2 id="newsletter-modal-title">Join the Saffron for Joy Community</h2>
+        <p>Get exclusive recipes, wellness tips, and early access to new products delivered to your inbox.</p>
+
+        <form class="newsletter-form-modal" action="https://formspree.io/f/{{ site.formspree_id }}" method="POST">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Your first name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Your email address" required>
+          </div>
+          <input type="hidden" name="_subject" value="Newsletter Signup from Modal">
+          <button type="submit" class="btn btn--primary btn--full">Subscribe Now</button>
+          <p class="newsletter-privacy">We respect your privacy. Unsubscribe anytime.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

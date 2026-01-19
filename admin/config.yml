@@ -1,0 +1,172 @@
+backend:
+  name: github
+  repo: Saffron4Joy/Website-S4J
+  branch: main
+
+# For local development, uncomment this:
+# local_backend: true
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+# Publishing workflow
+publish_mode: editorial_workflow
+
+# Site URL for previews
+site_url: https://saffronforjoy.com
+
+collections:
+  # Blog Posts
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - label: "Categories"
+        name: "categories"
+        widget: "select"
+        multiple: true
+        options:
+          - "Recipes"
+          - "Wellness"
+          - "Lifestyle"
+          - "Tips"
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        allow_add: true
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Description (SEO)", name: "description", widget: "string" }
+      - { label: "Author", name: "author", widget: "string", default: "Saffron for Joy" }
+      - { label: "Read Time (minutes)", name: "read_time", widget: "number", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # Recipes
+  - name: "recipes"
+    label: "Recipes"
+    folder: "_recipes"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - "Main"
+          - "Dessert"
+          - "Drinks"
+          - "Breakfast"
+          - "Appetizer"
+          - "Side"
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Featured Recipe?", name: "featured", widget: "boolean", default: false }
+      - { label: "Prep Time (minutes)", name: "prep_time", widget: "number" }
+      - { label: "Cook Time (minutes)", name: "cook_time", widget: "number" }
+      - { label: "Servings", name: "servings", widget: "number" }
+      - label: "Difficulty"
+        name: "difficulty"
+        widget: "select"
+        options:
+          - "Easy"
+          - "Intermediate"
+          - "Advanced"
+      - label: "Ingredients"
+        name: "ingredients"
+        widget: "list"
+        allow_add: true
+        field: { label: "Ingredient", name: "ingredient", widget: "string" }
+      - label: "Instructions"
+        name: "instructions"
+        widget: "list"
+        allow_add: true
+        field: { label: "Step", name: "step", widget: "text" }
+      - label: "Tips"
+        name: "tips"
+        widget: "list"
+        required: false
+        allow_add: true
+        field: { label: "Tip", name: "tip", widget: "string" }
+      - label: "Nutrition Info"
+        name: "nutrition"
+        widget: "object"
+        required: false
+        fields:
+          - { label: "Calories", name: "calories", widget: "string", required: false }
+          - { label: "Protein", name: "protein", widget: "string", required: false }
+          - { label: "Carbs", name: "carbs", widget: "string", required: false }
+          - { label: "Fat", name: "fat", widget: "string", required: false }
+      - { label: "Additional Notes", name: "body", widget: "markdown", required: false }
+
+  # Pages
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "About"
+        name: "about"
+        file: "pages/about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Permalink", name: "permalink", widget: "hidden", default: "/about/" }
+          - { label: "Description (SEO)", name: "description", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "How It Works"
+        name: "how-it-works"
+        file: "pages/how-it-works.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Permalink", name: "permalink", widget: "hidden", default: "/how-it-works/" }
+          - { label: "Description (SEO)", name: "description", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "Shop"
+        name: "shop"
+        file: "pages/shop.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Permalink", name: "permalink", widget: "hidden", default: "/shop/" }
+          - { label: "Description (SEO)", name: "description", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "Contact"
+        name: "contact"
+        file: "pages/contact.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Permalink", name: "permalink", widget: "hidden", default: "/contact/" }
+          - { label: "Description (SEO)", name: "description", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+  # Site Settings
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "General Settings"
+        name: "general"
+        file: "_data/settings.yml"
+        fields:
+          - { label: "Site Title", name: "title", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Email", name: "email", widget: "string" }
+          - label: "Social Media"
+            name: "social"
+            widget: "object"
+            fields:
+              - { label: "Instagram Username", name: "instagram", widget: "string", required: false }
+              - { label: "Pinterest Username", name: "pinterest", widget: "string", required: false }
+              - { label: "Facebook Username", name: "facebook", widget: "string", required: false }
+              - { label: "Twitter Username", name: "twitter", widget: "string", required: false }

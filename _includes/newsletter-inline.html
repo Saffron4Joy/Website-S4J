@@ -1,0 +1,13 @@
+<div class="newsletter-inline">
+  <div class="newsletter-inline-content">
+    <h3>Enjoy This Content?</h3>
+    <p>Subscribe for more saffron-inspired recipes and wellness tips delivered to your inbox.</p>
+    <form class="newsletter-form-inline" action="https://formspree.io/f/{{ site.formspree_id }}" method="POST">
+      <div class="newsletter-form-row">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <input type="hidden" name="_subject" value="Newsletter Signup - Inline">
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+      </div>
+    </form>
+  </div>
+</div>

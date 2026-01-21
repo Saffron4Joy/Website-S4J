@@ -81,6 +81,10 @@ defaults:
 lang: en
 logo: /assets/images/logo.jpg
 
+# Include for processing
+include:
+  - fr
+
 # Exclude from processing
 exclude:
   - Gemfile

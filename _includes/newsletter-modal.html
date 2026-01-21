@@ -1,3 +1,6 @@
+{% assign lang = page.lang | default: site.default_lang | default: "en" %}
+{% assign t = site.data.translations[lang] %}
+
 <div class="modal" id="newsletter-modal" aria-hidden="true">
   <div class="modal-overlay" data-modal-close></div>
   <div class="modal-content" role="dialog" aria-labelledby="newsletter-modal-title">
@@ -6,14 +9,47 @@
     </button>
 
     <div class="modal-body">
-      <div class="newsletter-modal-content">
+      <!-- Subscription Form -->
+      <div class="newsletter-modal-content" id="newsletter-form-container">
         <div class="newsletter-icon">
           <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </div>
-        <h2 id="newsletter-modal-title">Join the Saffron for Joy Community</h2>
-        <p>Get exclusive recipes, wellness tips, and early access to new products delivered to your inbox.</p>
 
-        <form class="newsletter-form-modal" action="https://formspree.io/f/{{ site.formspree_id }}" method="POST">
+        {% if lang == "fr" %}
+        <h2 id="newsletter-modal-title">Rejoignez la Communauté Saffron for Joy</h2>
+        <p class="newsletter-intro">Recevez du contenu exclusif directement dans votre boîte mail :</p>
+
+        <ul class="newsletter-benefits">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Recettes exclusives au safran chaque semaine</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Conseils bien-être et bienfaits du safran</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Accès anticipé aux nouveaux produits</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Réductions exclusives pour les abonnés</li>
+        </ul>
+
+        <form class="newsletter-form-modal" id="newsletter-modal-form" action="https://formspree.io/f/{{ site.formspree_id }}" method="POST">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Votre prénom" required>
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Votre adresse email" required>
+          </div>
+          <input type="hidden" name="_subject" value="Newsletter Signup from Modal">
+          <input type="hidden" name="language" value="fr">
+          <button type="submit" class="btn btn--primary btn--full">S'abonner Maintenant</button>
+          <p class="newsletter-privacy">Nous respectons votre vie privée. Désabonnement possible à tout moment.</p>
+        </form>
+        {% else %}
+        <h2 id="newsletter-modal-title">Join the Saffron for Joy Community</h2>
+        <p class="newsletter-intro">Get exclusive content delivered straight to your inbox:</p>
+
+        <ul class="newsletter-benefits">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Exclusive saffron recipes every week</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Wellness tips & saffron health benefits</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Early access to new products</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Exclusive subscriber-only discounts</li>
+        </ul>
+
+        <form class="newsletter-form-modal" id="newsletter-modal-form" action="https://formspree.io/f/{{ site.formspree_id }}" method="POST">
           <div class="form-group">
             <input type="text" name="name" placeholder="Your first name" required>
           </div>
@@ -21,10 +57,71 @@
             <input type="email" name="email" placeholder="Your email address" required>
           </div>
           <input type="hidden" name="_subject" value="Newsletter Signup from Modal">
+          <input type="hidden" name="language" value="en">
           <button type="submit" class="btn btn--primary btn--full">Subscribe Now</button>
           <p class="newsletter-privacy">We respect your privacy. Unsubscribe anytime.</p>
         </form>
+        {% endif %}
+      </div>
+
+      <!-- Success Message (hidden by default) -->
+      <div class="newsletter-success" id="newsletter-success" style="display: none;">
+        <div class="success-icon">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="16 10 10 16 8 14"/></svg>
+        </div>
+        {% if lang == "fr" %}
+        <h2>Merci de votre inscription !</h2>
+        <p>Vous êtes maintenant membre de la communauté Saffron for Joy. Vérifiez votre boîte mail pour confirmer votre abonnement.</p>
+        <p class="success-note">Vous recevrez bientôt votre première newsletter avec des recettes exclusives.</p>
+        {% else %}
+        <h2>Thank You for Subscribing!</h2>
+        <p>You're now part of the Saffron for Joy community. Check your inbox to confirm your subscription.</p>
+        <p class="success-note">You'll receive your first newsletter soon with exclusive recipes.</p>
+        {% endif %}
+        <button class="btn btn--outline" data-modal-close>
+          {% if lang == "fr" %}Continuer à explorer{% else %}Continue Exploring{% endif %}
+        </button>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const modalForm = document.getElementById('newsletter-modal-form');
+  const formContainer = document.getElementById('newsletter-form-container');
+  const successMessage = document.getElementById('newsletter-success');
+
+  if (modalForm) {
+    modalForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(modalForm);
+      const submitBtn = modalForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+
+      submitBtn.textContent = '...';
+      submitBtn.disabled = true;
+
+      fetch(modalForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(response => {
+        if (response.ok) {
+          formContainer.style.display = 'none';
+          successMessage.style.display = 'block';
+        } else {
+          throw new Error('Form submission failed');
+        }
+      })
+      .catch(error => {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        alert('Something went wrong. Please try again.');
+      });
+    });
+  }
+});
+</script>

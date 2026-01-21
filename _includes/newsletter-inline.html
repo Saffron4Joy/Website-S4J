@@ -1,13 +1,82 @@
+{% assign lang = page.lang | default: site.default_lang | default: "en" %}
+
 <div class="newsletter-inline">
-  <div class="newsletter-inline-content">
-    <h3>Enjoy This Content?</h3>
-    <p>Subscribe for more saffron-inspired recipes and wellness tips delivered to your inbox.</p>
+  <div class="newsletter-inline-content" id="newsletter-inline-form">
+    {% if lang == "fr" %}
+    <h3>Vous aimez ce contenu ?</h3>
+    <p>Rejoignez notre communauté et recevez des recettes au safran exclusives, des conseils bien-être et des offres spéciales.</p>
     <form class="newsletter-form-inline" action="https://formspree.io/f/{{ site.formspree_id }}" method="POST">
       <div class="newsletter-form-row">
-        <input type="email" name="email" placeholder="Enter your email" required>
+        <input type="email" name="email" placeholder="Votre adresse email" required>
         <input type="hidden" name="_subject" value="Newsletter Signup - Inline">
+        <input type="hidden" name="language" value="fr">
+        <button type="submit" class="btn btn--primary">S'abonner</button>
+      </div>
+      <p class="newsletter-inline-note">Rejoignez 500+ passionnés de safran. Désabonnement facile.</p>
+    </form>
+    {% else %}
+    <h3>Enjoying This Content?</h3>
+    <p>Join our community and receive exclusive saffron recipes, wellness tips, and special offers.</p>
+    <form class="newsletter-form-inline" action="https://formspree.io/f/{{ site.formspree_id }}" method="POST">
+      <div class="newsletter-form-row">
+        <input type="email" name="email" placeholder="Your email address" required>
+        <input type="hidden" name="_subject" value="Newsletter Signup - Inline">
+        <input type="hidden" name="language" value="en">
         <button type="submit" class="btn btn--primary">Subscribe</button>
       </div>
+      <p class="newsletter-inline-note">Join 500+ saffron enthusiasts. Easy unsubscribe.</p>
     </form>
+    {% endif %}
+  </div>
+
+  <!-- Success Message -->
+  <div class="newsletter-inline-success" id="newsletter-inline-success" style="display: none;">
+    <div class="success-checkmark">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="16 10 10 16 8 14"/></svg>
+    </div>
+    {% if lang == "fr" %}
+    <p><strong>Merci !</strong> Vérifiez votre boîte mail pour confirmer.</p>
+    {% else %}
+    <p><strong>Thank you!</strong> Check your inbox to confirm.</p>
+    {% endif %}
   </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.newsletter-form-inline').forEach(function(form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const container = form.closest('.newsletter-inline');
+      const formContent = container.querySelector('.newsletter-inline-content');
+      const successMsg = container.querySelector('.newsletter-inline-success');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+
+      submitBtn.textContent = '...';
+      submitBtn.disabled = true;
+
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(response => {
+        if (response.ok) {
+          formContent.style.display = 'none';
+          successMsg.style.display = 'flex';
+        } else {
+          throw new Error('Form submission failed');
+        }
+      })
+      .catch(error => {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        alert('Something went wrong. Please try again.');
+      });
+    });
+  });
+});
+</script>

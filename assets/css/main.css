@@ -1421,6 +1421,88 @@ p:last-child {
   margin-top: var(--space-md);
 }
 
+/* Newsletter Benefits List */
+.newsletter-intro {
+  color: var(--color-text-light);
+  margin-bottom: var(--space-lg);
+}
+
+.newsletter-benefits {
+  list-style: none;
+  text-align: left;
+  margin-bottom: var(--space-xl);
+  padding: 0;
+}
+
+.newsletter-benefits li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+}
+
+.newsletter-benefits svg {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+/* Newsletter Success Message */
+.newsletter-success {
+  text-align: center;
+  padding: var(--space-xl);
+}
+
+.newsletter-success .success-icon {
+  color: var(--color-primary);
+  margin-bottom: var(--space-lg);
+}
+
+.newsletter-success h2 {
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+}
+
+.newsletter-success p {
+  color: var(--color-text-light);
+  margin-bottom: var(--space-md);
+}
+
+.newsletter-success .success-note {
+  font-size: var(--font-size-sm);
+  font-style: italic;
+}
+
+.newsletter-success button {
+  margin-top: var(--space-lg);
+}
+
+/* Inline Newsletter Success */
+.newsletter-inline-success {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+}
+
+.newsletter-inline-success .success-checkmark {
+  color: var(--color-primary);
+}
+
+.newsletter-inline-success p {
+  margin: 0;
+}
+
+.newsletter-inline-note {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+  margin-top: var(--space-sm);
+}
+
 /* --------------------------------------------------------------------------
    Footer Styles
    -------------------------------------------------------------------------- */

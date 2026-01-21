@@ -2,7 +2,7 @@
 title: "Persian Saffron Rice (Tahdig)"
 description: "The crown jewel of Persian cuisine - fluffy saffron-infused rice with a crispy golden bottom. A stunning centerpiece for any gathering."
 category: Main
-image: /assets/images/recipes/saffron-rice.jpg
+image: /assets/images/recipes/saffron-rice.png
 featured: true
 prep_time: 20
 cook_time: 60

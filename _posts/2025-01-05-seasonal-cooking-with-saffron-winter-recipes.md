@@ -3,7 +3,7 @@ title: "Seasonal Cooking with Saffron: Warming Winter Recipes"
 date: 2025-01-05
 categories: [Recipes, Lifestyle]
 tags: [winter recipes, seasonal cooking, comfort food]
-image: /assets/images/blog/winter-saffron.jpg
+image: /assets/images/blog/winter-saffron.png
 description: "Embrace the cozy season with these warming saffron recipes perfect for cold winter days. From hearty stews to golden drinks."
 author: Saffron for Joy
 read_time: 6

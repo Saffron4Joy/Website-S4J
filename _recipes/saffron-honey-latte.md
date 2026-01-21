@@ -2,7 +2,7 @@
 title: "Saffron Honey Latte"
 description: "A warm, comforting drink that combines the luxury of saffron with honey and your choice of milk. Perfect for cozy mornings or evening relaxation."
 category: Drinks
-image: /assets/images/recipes/saffron-latte.jpg
+image: /assets/images/recipes/saffron-latte.png
 featured: true
 prep_time: 5
 cook_time: 10

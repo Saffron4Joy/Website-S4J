@@ -1,0 +1,145 @@
+---
+layout: home
+title: Accueil
+lang: fr
+description: "Découvrez la magie du safran à travers des recettes délicieuses, des conseils bien-être et les bienfaits pour la santé de l'épice la plus précieuse au monde."
+keywords: "recettes safran, bien-être, bienfaits santé, safran, cuisine au safran"
+---
+
+{% assign t = site.data.translations.fr %}
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-background" style="background-image: url('{{ '/assets/images/hero-bg.png' | relative_url }}')"></div>
+  <div class="container">
+    <div class="hero-content">
+      <span class="hero-tagline">{{ t.hero_welcome }}</span>
+      <h1 class="hero-title">{{ t.hero_title }} <span>{{ t.hero_title_highlight }}</span></h1>
+      <p class="hero-description">{{ t.hero_description }}</p>
+      <div class="hero-cta">
+        <a href="{{ '/fr/recettes/' | relative_url }}" class="btn btn--primary btn--large">{{ t.hero_cta_recipes }}</a>
+        <a href="{{ '/fr/comment-ca-marche/' | relative_url }}" class="btn btn--outline btn--large">{{ t.hero_cta_benefits }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Recipes Section -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tagline">{{ t.section_featured_tagline }}</span>
+      <h2 class="section-title">{{ t.section_featured_title }}</h2>
+      <p class="section-description">{{ t.section_featured_description }}</p>
+    </div>
+
+    <div class="recipes-grid">
+      {% assign featured_recipes = site.recipes_fr | where: "featured", true | limit: 4 %}
+      {% if featured_recipes.size == 0 %}
+        {% assign featured_recipes = site.recipes_fr | limit: 4 %}
+      {% endif %}
+      {% for recipe in featured_recipes %}
+        {% include recipe-card.html recipe=recipe %}
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-2xl">
+      <a href="{{ '/fr/recettes/' | relative_url }}" class="btn btn--outline">{{ t.view_all_recipes }}</a>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits Preview Section -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tagline">{{ t.section_benefits_tagline }}</span>
+      <h2 class="section-title">{{ t.section_benefits_title }}</h2>
+      <p class="section-description">{{ t.section_benefits_description }}</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/><circle cx="12" cy="12" r="5"/></svg>
+        </div>
+        <h3>{{ t.benefit_mood_title }}</h3>
+        <p>{{ t.benefit_mood_desc }}</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3>{{ t.benefit_anti_inflammatory_title }}</h3>
+        <p>{{ t.benefit_anti_inflammatory_desc }}</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
+        </div>
+        <h3>{{ t.benefit_sleep_title }}</h3>
+        <p>{{ t.benefit_sleep_desc }}</p>
+      </div>
+    </div>
+
+    <div class="text-center mt-2xl">
+      <a href="{{ '/fr/comment-ca-marche/' | relative_url }}" class="btn btn--primary">{{ t.discover_benefits }}</a>
+    </div>
+  </div>
+</section>
+
+<!-- Latest Blog Posts -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tagline">{{ t.section_blog_tagline }}</span>
+      <h2 class="section-title">{{ t.section_blog_title }}</h2>
+      <p class="section-description">{{ t.section_blog_description }}</p>
+    </div>
+
+    <div class="posts-grid">
+      {% assign fr_posts = site.posts | where: "lang", "fr" | limit: 3 %}
+      {% for post in fr_posts %}
+        {% include post-card.html post=post %}
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-2xl">
+      <a href="{{ '/fr/blog/' | relative_url }}" class="btn btn--outline">{{ t.read_blog }}</a>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="newsletter-section">
+  <div class="container">
+    <h2>{{ t.section_newsletter_title }}</h2>
+    <p>{{ t.section_newsletter_description }}</p>
+    <form class="newsletter-form" action="https://formspree.io/f/{{ site.formspree_id }}" method="POST">
+      <input type="email" name="email" placeholder="{{ t.newsletter_placeholder }}" required>
+      <input type="hidden" name="_subject" value="Nouvel abonné newsletter">
+      <input type="hidden" name="language" value="fr">
+      <button type="submit" class="btn btn--primary">{{ t.newsletter_button }}</button>
+    </form>
+  </div>
+</section>
+
+<!-- About Preview -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="about-intro">
+      <div class="about-image">
+        <img src="{{ '/assets/images/about-preview.png' | relative_url }}" alt="À propos de Saffron for Joy">
+      </div>
+      <div class="about-text">
+        <span class="section-tagline">{{ t.section_about_tagline }}</span>
+        <h2>{{ t.section_about_title }}</h2>
+        <p>{{ t.section_about_text1 }}</p>
+        <p>{{ t.section_about_text2 }}</p>
+        <a href="{{ '/fr/a-propos/' | relative_url }}" class="btn btn--outline mt-lg">{{ t.learn_more }}</a>
+      </div>
+    </div>
+  </div>
+</section>

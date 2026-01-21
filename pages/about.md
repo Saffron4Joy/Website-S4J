@@ -8,7 +8,7 @@ description: "Learn about our passion for saffron and our mission to share its i
 
 <div class="about-intro">
   <div class="about-image">
-    <img src="/assets/images/about-main.svg" alt="Saffron threads">
+    <img src="{{ '/assets/images/about-main.png' | relative_url }}" alt="Saffron threads">
   </div>
   <div class="about-text">
     <h2>Our Journey</h2>

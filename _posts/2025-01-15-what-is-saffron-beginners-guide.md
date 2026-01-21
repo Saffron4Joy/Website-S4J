@@ -3,7 +3,7 @@ title: "What Is Saffron? A Beginner's Guide to the World's Most Precious Spice"
 date: 2025-01-15
 categories: [Wellness, Tips]
 tags: [saffron basics, cooking tips, health benefits]
-image: /assets/images/blog/saffron-guide.jpg
+image: /assets/images/blog/saffron-guide.png
 description: "Everything you need to know about saffron - from its origins and health benefits to how to buy, store, and use this precious spice."
 author: Saffron for Joy
 read_time: 8

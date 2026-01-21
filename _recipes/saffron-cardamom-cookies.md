@@ -2,7 +2,7 @@
 title: "Saffron Cardamom Shortbread Cookies"
 description: "Delicate, melt-in-your-mouth shortbread cookies perfumed with saffron and cardamom. A sophisticated treat for tea time."
 category: Dessert
-image: /assets/images/recipes/saffron-cookies.jpg
+image: /assets/images/recipes/saffron-cookies.png
 featured: false
 prep_time: 20
 cook_time: 15

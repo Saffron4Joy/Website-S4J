@@ -1,7 +1,14 @@
+{% assign lang = page.lang | default: site.default_lang | default: "en" %}
+{% assign t = site.data.translations[lang] %}
+
 <header class="site-header" id="site-header">
   <div class="container">
     <nav class="main-nav" aria-label="Main navigation">
+      {% if lang == "fr" %}
+      <a href="{{ '/fr/' | relative_url }}" class="logo" aria-label="Saffron for Joy - Accueil">
+      {% else %}
       <a href="{{ '/' | relative_url }}" class="logo" aria-label="Saffron for Joy - Home">
+      {% endif %}
         <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="Saffron for Joy" class="logo-image">
       </a>
 
@@ -10,18 +17,39 @@
       </button>
 
       <ul class="nav-menu" id="nav-menu">
-        <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
-        <li><a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}class="active"{% endif %}>About</a></li>
-        <li><a href="{{ '/how-it-works/' | relative_url }}" {% if page.url == '/how-it-works/' %}class="active"{% endif %}>How It Works</a></li>
-        <li><a href="{{ '/recipes/' | relative_url }}" {% if page.url contains '/recipes' %}class="active"{% endif %}>Recipes</a></li>
-        <li><a href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog' %}class="active"{% endif %}>Blog</a></li>
-        <li><a href="{{ '/shop/' | relative_url }}" {% if page.url == '/shop/' %}class="active"{% endif %}>Shop</a></li>
-        <li><a href="{{ '/contact/' | relative_url }}" {% if page.url == '/contact/' %}class="active"{% endif %}>Contact</a></li>
+        {% if lang == "fr" %}
+        <li><a href="{{ '/fr/' | relative_url }}" {% if page.url == '/fr/' or page.url == '/fr/index.html' %}class="active"{% endif %}>{{ t.nav_home }}</a></li>
+        <li><a href="{{ '/fr/a-propos/' | relative_url }}" {% if page.url contains '/a-propos' %}class="active"{% endif %}>{{ t.nav_about }}</a></li>
+        <li><a href="{{ '/fr/comment-ca-marche/' | relative_url }}" {% if page.url contains '/comment-ca-marche' %}class="active"{% endif %}>{{ t.nav_how_it_works }}</a></li>
+        <li><a href="{{ '/fr/recettes/' | relative_url }}" {% if page.url contains '/recettes' %}class="active"{% endif %}>{{ t.nav_recipes }}</a></li>
+        <li><a href="{{ '/fr/blog/' | relative_url }}" {% if page.url contains '/fr/blog' %}class="active"{% endif %}>{{ t.nav_blog }}</a></li>
+        <li><a href="{{ '/fr/boutique/' | relative_url }}" {% if page.url contains '/boutique' %}class="active"{% endif %}>{{ t.nav_shop }}</a></li>
+        <li><a href="{{ '/fr/contact/' | relative_url }}" {% if page.url contains '/fr/contact' %}class="active"{% endif %}>{{ t.nav_contact }}</a></li>
+        {% else %}
+        <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>{{ t.nav_home }}</a></li>
+        <li><a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}class="active"{% endif %}>{{ t.nav_about }}</a></li>
+        <li><a href="{{ '/how-it-works/' | relative_url }}" {% if page.url == '/how-it-works/' %}class="active"{% endif %}>{{ t.nav_how_it_works }}</a></li>
+        <li><a href="{{ '/recipes/' | relative_url }}" {% if page.url contains '/recipes' %}class="active"{% endif %}>{{ t.nav_recipes }}</a></li>
+        <li><a href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog' %}class="active"{% endif %}>{{ t.nav_blog }}</a></li>
+        <li><a href="{{ '/shop/' | relative_url }}" {% if page.url == '/shop/' %}class="active"{% endif %}>{{ t.nav_shop }}</a></li>
+        <li><a href="{{ '/contact/' | relative_url }}" {% if page.url == '/contact/' %}class="active"{% endif %}>{{ t.nav_contact }}</a></li>
+        {% endif %}
       </ul>
 
       <div class="nav-actions">
+        <div class="language-switcher">
+          {% if lang == "fr" %}
+          <a href="{{ page.url | replace: '/fr/', '/' | relative_url }}" class="lang-link" title="English">EN</a>
+          <span class="lang-separator">|</span>
+          <span class="lang-link lang-active" title="Français">FR</span>
+          {% else %}
+          <span class="lang-link lang-active" title="English">EN</span>
+          <span class="lang-separator">|</span>
+          <a href="{{ '/fr' | append: page.url | relative_url }}" class="lang-link" title="Français">FR</a>
+          {% endif %}
+        </div>
         <button class="btn btn--outline btn--small newsletter-trigger" data-modal="newsletter-modal">
-          Subscribe
+          {{ t.nav_subscribe }}
         </button>
       </div>
     </nav>

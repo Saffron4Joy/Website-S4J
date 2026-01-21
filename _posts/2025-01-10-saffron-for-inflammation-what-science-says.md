@@ -3,7 +3,7 @@ title: "Saffron for Inflammation: What the Science Actually Says"
 date: 2025-01-10
 categories: [Wellness]
 tags: [inflammation, health benefits, research, joint health]
-image: /assets/images/blog/saffron-inflammation.jpg
+image: /assets/images/blog/saffron-inflammation.png
 description: "A deep dive into the scientific research on saffron's anti-inflammatory properties and how it may help with joint pain and overall wellness."
 author: Saffron for Joy
 read_time: 7

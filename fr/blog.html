@@ -1,0 +1,29 @@
+---
+layout: page
+title: Blog
+subtitle: Articles & Conseils
+permalink: /fr/blog/
+lang: fr
+description: "Découvrez nos articles sur le safran, ses bienfaits pour la santé et des conseils pour l'utiliser en cuisine."
+---
+
+{% assign t = site.data.translations.fr %}
+
+<div class="section-header mb-3xl">
+  <span class="section-tagline">{{ t.section_blog_tagline }}</span>
+  <h2 class="section-title">{{ t.section_blog_title }}</h2>
+  <p class="section-description">{{ t.section_blog_description }}</p>
+</div>
+
+<div class="posts-grid">
+  {% assign fr_posts = site.posts | where: "lang", "fr" %}
+  {% for post in fr_posts %}
+    {% include post-card.html post=post %}
+  {% endfor %}
+</div>
+
+{% if fr_posts.size == 0 %}
+<div class="text-center py-3xl">
+  <p>Les articles en français arrivent bientôt ! En attendant, consultez notre <a href="{{ '/blog/' | relative_url }}">blog en anglais</a>.</p>
+</div>
+{% endif %}

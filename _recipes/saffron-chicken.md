@@ -2,7 +2,7 @@
 title: "One-Pan Saffron Chicken with Vegetables"
 description: "Tender chicken thighs infused with saffron and roasted with seasonal vegetables. An easy weeknight dinner that feels special."
 category: Main
-image: /assets/images/recipes/saffron-chicken.jpg
+image: /assets/images/recipes/saffron-chicken.png
 featured: true
 prep_time: 15
 cook_time: 45

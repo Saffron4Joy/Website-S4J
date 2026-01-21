@@ -1,11 +1,18 @@
+{% assign lang = page.lang | default: site.default_lang | default: "en" %}
+{% assign t = site.data.translations[lang] %}
+
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
+        {% if lang == "fr" %}
+        <a href="{{ '/fr/' | relative_url }}" class="footer-logo">
+        {% else %}
         <a href="{{ '/' | relative_url }}" class="footer-logo">
+        {% endif %}
           <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="Saffron for Joy">
         </a>
-        <p class="footer-tagline">{{ site.tagline }}</p>
+        <p class="footer-tagline">{{ t.footer_tagline }}</p>
         <div class="footer-social">
           {% if site.instagram_username %}
           <a href="https://instagram.com/{{ site.instagram_username }}" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
@@ -26,39 +33,54 @@
       </div>
 
       <div class="footer-nav">
-        <h4>Explore</h4>
+        <h4>{{ t.footer_explore }}</h4>
         <ul>
-          <li><a href="{{ '/recipes/' | relative_url }}">Recipes</a></li>
-          <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
-          <li><a href="{{ '/how-it-works/' | relative_url }}">Health Benefits</a></li>
-          <li><a href="{{ '/shop/' | relative_url }}">Shop</a></li>
+          {% if lang == "fr" %}
+          <li><a href="{{ '/fr/recettes/' | relative_url }}">{{ t.nav_recipes }}</a></li>
+          <li><a href="{{ '/fr/blog/' | relative_url }}">{{ t.nav_blog }}</a></li>
+          <li><a href="{{ '/fr/comment-ca-marche/' | relative_url }}">{{ t.footer_health_benefits }}</a></li>
+          <li><a href="{{ '/fr/boutique/' | relative_url }}">{{ t.nav_shop }}</a></li>
+          {% else %}
+          <li><a href="{{ '/recipes/' | relative_url }}">{{ t.nav_recipes }}</a></li>
+          <li><a href="{{ '/blog/' | relative_url }}">{{ t.nav_blog }}</a></li>
+          <li><a href="{{ '/how-it-works/' | relative_url }}">{{ t.footer_health_benefits }}</a></li>
+          <li><a href="{{ '/shop/' | relative_url }}">{{ t.nav_shop }}</a></li>
+          {% endif %}
         </ul>
       </div>
 
       <div class="footer-nav">
-        <h4>Company</h4>
+        <h4>{{ t.footer_company }}</h4>
         <ul>
-          <li><a href="{{ '/about/' | relative_url }}">About Us</a></li>
-          <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
-          <li><a href="{{ '/privacy/' | relative_url }}">Privacy Policy</a></li>
-          <li><a href="{{ '/terms/' | relative_url }}">Terms of Service</a></li>
+          {% if lang == "fr" %}
+          <li><a href="{{ '/fr/a-propos/' | relative_url }}">{{ t.footer_about }}</a></li>
+          <li><a href="{{ '/fr/contact/' | relative_url }}">{{ t.footer_contact }}</a></li>
+          <li><a href="{{ '/fr/confidentialite/' | relative_url }}">{{ t.footer_privacy }}</a></li>
+          <li><a href="{{ '/fr/conditions/' | relative_url }}">{{ t.footer_terms }}</a></li>
+          {% else %}
+          <li><a href="{{ '/about/' | relative_url }}">{{ t.footer_about }}</a></li>
+          <li><a href="{{ '/contact/' | relative_url }}">{{ t.footer_contact }}</a></li>
+          <li><a href="{{ '/privacy/' | relative_url }}">{{ t.footer_privacy }}</a></li>
+          <li><a href="{{ '/terms/' | relative_url }}">{{ t.footer_terms }}</a></li>
+          {% endif %}
         </ul>
       </div>
 
       <div class="footer-newsletter">
-        <h4>Stay Connected</h4>
-        <p>Join our community for exclusive recipes, wellness tips, and special offers.</p>
+        <h4>{{ t.footer_newsletter_title }}</h4>
+        <p>{{ t.footer_newsletter_desc }}</p>
         <form class="newsletter-form-footer" action="https://formspree.io/f/{{ site.formspree_id }}" method="POST">
-          <input type="email" name="email" placeholder="Enter your email" required>
+          <input type="email" name="email" placeholder="{{ t.newsletter_placeholder }}" required>
           <input type="hidden" name="_subject" value="Newsletter Signup">
-          <button type="submit" class="btn btn--primary">Subscribe</button>
+          <input type="hidden" name="language" value="{{ lang }}">
+          <button type="submit" class="btn btn--primary">{{ t.newsletter_button }}</button>
         </form>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
-      <p class="footer-credit">Crafted with love and saffron</p>
+      <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. {{ t.footer_copyright }}</p>
+      <p class="footer-credit">{{ t.footer_credit }}</p>
     </div>
   </div>
 </footer>

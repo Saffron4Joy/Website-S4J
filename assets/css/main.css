@@ -419,6 +419,35 @@ p:last-child {
   gap: var(--space-md);
 }
 
+/* Language Switcher */
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--font-size-sm);
+}
+
+.lang-link {
+  color: var(--color-text-light);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.lang-link:hover {
+  color: var(--color-primary);
+}
+
+.lang-link.lang-active {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.lang-separator {
+  color: var(--color-text-light);
+  opacity: 0.5;
+}
+
 /* Mobile Navigation */
 @media (max-width: 991px) {
   .nav-toggle {

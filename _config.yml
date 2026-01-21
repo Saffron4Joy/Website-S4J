@@ -6,6 +6,10 @@ url: "https://saffron4joy.github.io"
 baseurl: "/Website-S4J"
 author: Saffron for Joy
 
+# Multi-language Settings
+languages: ["en", "fr"]
+default_lang: "en"
+
 # Social Links
 twitter_username: saffronforjoy
 instagram_username: saffronforjoy
@@ -25,6 +29,9 @@ collections:
   recipes:
     output: true
     permalink: /recipes/:title/
+  recipes_fr:
+    output: true
+    permalink: /fr/recettes/:title/
 
 # Pagination
 plugins:
@@ -44,17 +51,31 @@ defaults:
     values:
       layout: "post"
       author: "Saffron for Joy"
+      lang: "en"
   - scope:
       path: ""
       type: "recipes"
     values:
       layout: "recipe"
       author: "Saffron for Joy"
+      lang: "en"
+  - scope:
+      path: ""
+      type: "recipes_fr"
+    values:
+      layout: "recipe"
+      author: "Saffron for Joy"
+      lang: "fr"
   - scope:
       path: ""
       type: "pages"
     values:
       layout: "page"
+      lang: "en"
+  - scope:
+      path: "fr"
+    values:
+      lang: "fr"
 
 # SEO Settings
 lang: en

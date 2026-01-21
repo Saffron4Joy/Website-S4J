@@ -1,0 +1,283 @@
+en:
+  # Site
+  site_title: "Saffron for Joy"
+  site_tagline: "Recipes & Wellness with the World's Most Precious Spice"
+
+  # Navigation
+  nav_home: "Home"
+  nav_about: "About"
+  nav_how_it_works: "How It Works"
+  nav_recipes: "Recipes"
+  nav_blog: "Blog"
+  nav_shop: "Shop"
+  nav_contact: "Contact"
+  nav_subscribe: "Subscribe"
+
+  # Hero Section
+  hero_welcome: "Welcome to Saffron for Joy"
+  hero_title: "Discover the Magic of"
+  hero_title_highlight: "Saffron"
+  hero_description: "Elevate your cooking and wellness journey with the world's most precious spice. Explore authentic recipes, unlock health benefits, and bring warmth to every dish."
+  hero_cta_recipes: "Explore Recipes"
+  hero_cta_benefits: "Learn Benefits"
+
+  # Sections
+  section_featured_tagline: "From Our Kitchen"
+  section_featured_title: "Featured Recipes"
+  section_featured_description: "Handpicked recipes that showcase the versatility and beauty of saffron in every bite."
+  view_all_recipes: "View All Recipes"
+
+  section_benefits_tagline: "The Red Gold"
+  section_benefits_title: "Why Saffron?"
+  section_benefits_description: "For centuries, saffron has been treasured not just for its flavor, but for its remarkable health benefits."
+  discover_benefits: "Discover All Benefits"
+
+  benefit_mood_title: "Mood Enhancement"
+  benefit_mood_desc: "Natural compounds in saffron have been shown to help improve mood and reduce symptoms of mild depression."
+  benefit_anti_inflammatory_title: "Anti-Inflammatory"
+  benefit_anti_inflammatory_desc: "Rich in antioxidants like crocin and crocetin that help reduce inflammation throughout the body."
+  benefit_sleep_title: "Better Sleep"
+  benefit_sleep_desc: "Studies suggest saffron may help improve sleep quality and duration for more restful nights."
+
+  section_blog_tagline: "From the Blog"
+  section_blog_title: "Latest Stories"
+  section_blog_description: "Inspiration, tips, and insights for your saffron journey."
+  read_blog: "Read the Blog"
+
+  section_newsletter_title: "Join Our Community"
+  section_newsletter_description: "Subscribe for exclusive recipes, wellness tips, and early access to new products."
+  newsletter_placeholder: "Enter your email address"
+  newsletter_button: "Subscribe"
+
+  section_about_tagline: "Our Story"
+  section_about_title: "A Passion for Saffron"
+  section_about_text1: "Saffron for Joy was born from a deep love of cooking, wellness, and the desire to share the incredible benefits of the world's most precious spice with everyone."
+  section_about_text2: "We believe that cooking with saffron is more than just adding a spice to a dish; it's about embracing a tradition of health, flavor, and joy that spans thousands of years."
+  learn_more: "Learn More About Us"
+
+  # Footer
+  footer_tagline: "Recipes & Wellness with the World's Most Precious Spice"
+  footer_explore: "Explore"
+  footer_company: "Company"
+  footer_about: "About Us"
+  footer_contact: "Contact"
+  footer_privacy: "Privacy Policy"
+  footer_terms: "Terms of Service"
+  footer_health_benefits: "Health Benefits"
+  footer_newsletter_title: "Stay Connected"
+  footer_newsletter_desc: "Join our community for exclusive recipes, wellness tips, and special offers."
+  footer_copyright: "All rights reserved."
+  footer_credit: "Crafted with love and saffron"
+
+  # Recipe Card
+  recipe_prep: "Prep"
+  recipe_cook: "Cook"
+  recipe_servings: "Servings"
+  recipe_difficulty: "Difficulty"
+  recipe_ingredients: "Ingredients"
+  recipe_instructions: "Instructions"
+  recipe_tips: "Chef's Tips"
+  recipe_nutrition: "Nutrition"
+  recipe_min: "min"
+
+  # Blog
+  blog_read_time: "min read"
+  blog_posted_on: "Posted on"
+  blog_by: "by"
+  blog_categories: "Categories"
+  blog_tags: "Tags"
+  blog_related: "Related Posts"
+
+  # About Page
+  about_title: "About Us"
+  about_subtitle: "The Story Behind Saffron for Joy"
+  about_journey_title: "Our Journey"
+  about_journey_p1: "Saffron for Joy began with a simple belief: that the world's most precious spice should be accessible to everyone who wants to enhance their cooking and wellness journey."
+  about_journey_p2: "Growing up in a family where saffron was a cherished ingredient in special dishes, we witnessed firsthand the joy it brought to our table. From aromatic rice dishes to soothing teas, saffron was always more than just a spice—it was a connection to our heritage and a symbol of celebration."
+  about_journey_p3: "As we learned more about saffron's remarkable health benefits—from mood enhancement to anti-inflammatory properties—we became passionate about sharing this knowledge with others. Saffron for Joy is our way of spreading that passion."
+  about_mission_title: "Our Mission"
+  about_mission_text: "We're on a mission to inspire people to incorporate saffron into their daily lives—not just as a luxury ingredient for special occasions, but as a regular part of a healthy, joyful lifestyle."
+  about_values_tagline: "What We Stand For"
+  about_values_title: "Our Values"
+  about_value_authenticity: "Authenticity"
+  about_value_authenticity_desc: "We share genuine recipes passed down through generations, combined with modern techniques that make saffron cooking accessible to everyone."
+  about_value_quality: "Quality"
+  about_value_quality_desc: "We believe in using only the finest saffron and teaching our community how to identify and source quality products."
+  about_value_wellness: "Wellness"
+  about_value_wellness_desc: "We're committed to evidence-based health information, helping you understand the real benefits of saffron backed by science."
+  about_value_community: "Community"
+  about_value_community_desc: "We believe in the power of sharing—recipes, stories, and the joy that comes from cooking with love."
+  about_join_title: "Join Our Journey"
+  about_join_text: "Whether you're a seasoned chef looking for new inspiration or someone just discovering the wonders of saffron, we welcome you to Saffron for Joy. Together, let's explore the magic of this incredible spice and bring more joy to our kitchens and our lives."
+  explore_recipes: "Explore Our Recipes"
+  get_in_touch: "Get in Touch"
+
+  # How It Works Page
+  how_it_works_title: "How It Works"
+  how_it_works_subtitle: "The Science & Benefits of Saffron"
+  how_it_works_tagline: "The Red Gold"
+  how_it_works_intro_title: "Why Saffron Is Called the World's Most Precious Spice"
+  how_it_works_intro_text: "For over 3,000 years, saffron has been treasured across cultures for its unique flavor, vibrant color, and remarkable healing properties. Modern science is now validating what ancient civilizations knew all along."
+
+  # Contact Page
+  contact_title: "Contact"
+  contact_subtitle: "Get in Touch"
+  contact_intro: "Have a question, suggestion, or just want to say hello? We'd love to hear from you."
+  contact_form_name: "Your Name"
+  contact_form_email: "Your Email"
+  contact_form_subject: "Subject"
+  contact_form_message: "Your Message"
+  contact_form_send: "Send Message"
+
+  # Shop Page
+  shop_title: "Shop"
+  shop_subtitle: "Premium Saffron Products"
+  shop_coming_soon: "Coming Soon"
+  shop_coming_soon_text: "We're working on bringing you the finest saffron products. Sign up to be notified when our shop launches."
+
+  # Language
+  language: "Language"
+  lang_en: "English"
+  lang_fr: "Français"
+
+fr:
+  # Site
+  site_title: "Saffron for Joy"
+  site_tagline: "Recettes & Bien-être avec l'Épice la Plus Précieuse au Monde"
+
+  # Navigation
+  nav_home: "Accueil"
+  nav_about: "À Propos"
+  nav_how_it_works: "Comment Ça Marche"
+  nav_recipes: "Recettes"
+  nav_blog: "Blog"
+  nav_shop: "Boutique"
+  nav_contact: "Contact"
+  nav_subscribe: "S'abonner"
+
+  # Hero Section
+  hero_welcome: "Bienvenue chez Saffron for Joy"
+  hero_title: "Découvrez la Magie du"
+  hero_title_highlight: "Safran"
+  hero_description: "Élevez votre cuisine et votre parcours bien-être avec l'épice la plus précieuse au monde. Explorez des recettes authentiques, découvrez ses bienfaits pour la santé et apportez de la chaleur à chaque plat."
+  hero_cta_recipes: "Explorer les Recettes"
+  hero_cta_benefits: "Découvrir les Bienfaits"
+
+  # Sections
+  section_featured_tagline: "De Notre Cuisine"
+  section_featured_title: "Recettes en Vedette"
+  section_featured_description: "Des recettes sélectionnées qui mettent en valeur la polyvalence et la beauté du safran dans chaque bouchée."
+  view_all_recipes: "Voir Toutes les Recettes"
+
+  section_benefits_tagline: "L'Or Rouge"
+  section_benefits_title: "Pourquoi le Safran ?"
+  section_benefits_description: "Depuis des siècles, le safran est apprécié non seulement pour sa saveur, mais aussi pour ses remarquables bienfaits pour la santé."
+  discover_benefits: "Découvrir Tous les Bienfaits"
+
+  benefit_mood_title: "Amélioration de l'Humeur"
+  benefit_mood_desc: "Les composés naturels du safran ont démontré leur capacité à améliorer l'humeur et à réduire les symptômes de la dépression légère."
+  benefit_anti_inflammatory_title: "Anti-Inflammatoire"
+  benefit_anti_inflammatory_desc: "Riche en antioxydants comme la crocine et la crocétine qui aident à réduire l'inflammation dans tout le corps."
+  benefit_sleep_title: "Meilleur Sommeil"
+  benefit_sleep_desc: "Des études suggèrent que le safran peut aider à améliorer la qualité et la durée du sommeil pour des nuits plus reposantes."
+
+  section_blog_tagline: "Du Blog"
+  section_blog_title: "Derniers Articles"
+  section_blog_description: "Inspiration, conseils et réflexions pour votre voyage avec le safran."
+  read_blog: "Lire le Blog"
+
+  section_newsletter_title: "Rejoignez Notre Communauté"
+  section_newsletter_description: "Abonnez-vous pour recevoir des recettes exclusives, des conseils bien-être et un accès anticipé aux nouveaux produits."
+  newsletter_placeholder: "Entrez votre adresse email"
+  newsletter_button: "S'abonner"
+
+  section_about_tagline: "Notre Histoire"
+  section_about_title: "Une Passion pour le Safran"
+  section_about_text1: "Saffron for Joy est né d'un profond amour de la cuisine, du bien-être et du désir de partager les incroyables bienfaits de l'épice la plus précieuse au monde avec tous."
+  section_about_text2: "Nous croyons que cuisiner avec le safran est plus qu'ajouter une épice à un plat ; c'est embrasser une tradition de santé, de saveur et de joie qui traverse des millénaires."
+  learn_more: "En Savoir Plus Sur Nous"
+
+  # Footer
+  footer_tagline: "Recettes & Bien-être avec l'Épice la Plus Précieuse au Monde"
+  footer_explore: "Explorer"
+  footer_company: "Entreprise"
+  footer_about: "À Propos"
+  footer_contact: "Contact"
+  footer_privacy: "Politique de Confidentialité"
+  footer_terms: "Conditions d'Utilisation"
+  footer_health_benefits: "Bienfaits pour la Santé"
+  footer_newsletter_title: "Restez Connecté"
+  footer_newsletter_desc: "Rejoignez notre communauté pour des recettes exclusives, des conseils bien-être et des offres spéciales."
+  footer_copyright: "Tous droits réservés."
+  footer_credit: "Créé avec amour et safran"
+
+  # Recipe Card
+  recipe_prep: "Préparation"
+  recipe_cook: "Cuisson"
+  recipe_servings: "Portions"
+  recipe_difficulty: "Difficulté"
+  recipe_ingredients: "Ingrédients"
+  recipe_instructions: "Instructions"
+  recipe_tips: "Conseils du Chef"
+  recipe_nutrition: "Nutrition"
+  recipe_min: "min"
+
+  # Blog
+  blog_read_time: "min de lecture"
+  blog_posted_on: "Publié le"
+  blog_by: "par"
+  blog_categories: "Catégories"
+  blog_tags: "Tags"
+  blog_related: "Articles Connexes"
+
+  # About Page
+  about_title: "À Propos"
+  about_subtitle: "L'Histoire de Saffron for Joy"
+  about_journey_title: "Notre Parcours"
+  about_journey_p1: "Saffron for Joy est né d'une croyance simple : l'épice la plus précieuse au monde devrait être accessible à tous ceux qui souhaitent enrichir leur cuisine et leur parcours bien-être."
+  about_journey_p2: "Ayant grandi dans une famille où le safran était un ingrédient précieux pour les plats spéciaux, nous avons été témoins de la joie qu'il apportait à notre table. Des plats de riz aromatiques aux thés apaisants, le safran a toujours été plus qu'une simple épice — c'était un lien avec notre héritage et un symbole de célébration."
+  about_journey_p3: "En découvrant les remarquables bienfaits du safran pour la santé — de l'amélioration de l'humeur aux propriétés anti-inflammatoires — nous sommes devenus passionnés par le partage de ces connaissances avec les autres. Saffron for Joy est notre façon de répandre cette passion."
+  about_mission_title: "Notre Mission"
+  about_mission_text: "Notre mission est d'inspirer les gens à intégrer le safran dans leur vie quotidienne — pas seulement comme un ingrédient de luxe pour les occasions spéciales, mais comme une partie régulière d'un mode de vie sain et joyeux."
+  about_values_tagline: "Ce Que Nous Défendons"
+  about_values_title: "Nos Valeurs"
+  about_value_authenticity: "Authenticité"
+  about_value_authenticity_desc: "Nous partageons des recettes authentiques transmises de génération en génération, combinées à des techniques modernes qui rendent la cuisine au safran accessible à tous."
+  about_value_quality: "Qualité"
+  about_value_quality_desc: "Nous croyons en l'utilisation uniquement du meilleur safran et nous enseignons à notre communauté comment identifier et se procurer des produits de qualité."
+  about_value_wellness: "Bien-être"
+  about_value_wellness_desc: "Nous nous engageons à fournir des informations de santé basées sur des preuves, vous aidant à comprendre les vrais bienfaits du safran soutenus par la science."
+  about_value_community: "Communauté"
+  about_value_community_desc: "Nous croyons au pouvoir du partage — recettes, histoires et la joie qui vient de cuisiner avec amour."
+  about_join_title: "Rejoignez Notre Aventure"
+  about_join_text: "Que vous soyez un chef expérimenté à la recherche de nouvelle inspiration ou quelqu'un qui découvre les merveilles du safran, nous vous souhaitons la bienvenue chez Saffron for Joy. Ensemble, explorons la magie de cette incroyable épice et apportons plus de joie dans nos cuisines et nos vies."
+  explore_recipes: "Explorer Nos Recettes"
+  get_in_touch: "Nous Contacter"
+
+  # How It Works Page
+  how_it_works_title: "Comment Ça Marche"
+  how_it_works_subtitle: "La Science & les Bienfaits du Safran"
+  how_it_works_tagline: "L'Or Rouge"
+  how_it_works_intro_title: "Pourquoi le Safran Est Appelé l'Épice la Plus Précieuse au Monde"
+  how_it_works_intro_text: "Depuis plus de 3 000 ans, le safran est apprécié à travers les cultures pour sa saveur unique, sa couleur vibrante et ses remarquables propriétés curatives. La science moderne valide aujourd'hui ce que les civilisations anciennes savaient depuis toujours."
+
+  # Contact Page
+  contact_title: "Contact"
+  contact_subtitle: "Contactez-Nous"
+  contact_intro: "Vous avez une question, une suggestion ou simplement envie de dire bonjour ? Nous serions ravis de vous entendre."
+  contact_form_name: "Votre Nom"
+  contact_form_email: "Votre Email"
+  contact_form_subject: "Sujet"
+  contact_form_message: "Votre Message"
+  contact_form_send: "Envoyer le Message"
+
+  # Shop Page
+  shop_title: "Boutique"
+  shop_subtitle: "Produits de Safran Premium"
+  shop_coming_soon: "Bientôt Disponible"
+  shop_coming_soon_text: "Nous travaillons à vous proposer les meilleurs produits de safran. Inscrivez-vous pour être notifié du lancement de notre boutique."
+
+  # Language
+  language: "Langue"
+  lang_en: "English"
+  lang_fr: "Français"

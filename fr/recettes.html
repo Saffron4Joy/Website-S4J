@@ -1,0 +1,28 @@
+---
+layout: page
+title: Recettes
+subtitle: Délicieuses Recettes au Safran
+permalink: /fr/recettes/
+lang: fr
+description: "Explorez notre collection de recettes au safran authentiques, des plats traditionnels persans aux créations modernes."
+---
+
+{% assign t = site.data.translations.fr %}
+
+<div class="section-header mb-3xl">
+  <span class="section-tagline">{{ t.section_featured_tagline }}</span>
+  <h2 class="section-title">Nos Recettes au Safran</h2>
+  <p class="section-description">Des recettes authentiques qui mettent en valeur la polyvalence et la beauté du safran.</p>
+</div>
+
+<div class="recipes-grid">
+  {% for recipe in site.recipes_fr %}
+    {% include recipe-card.html recipe=recipe %}
+  {% endfor %}
+</div>
+
+{% if site.recipes_fr.size == 0 %}
+<div class="text-center py-3xl">
+  <p>Les recettes en français arrivent bientôt ! En attendant, consultez nos <a href="{{ '/recipes/' | relative_url }}">recettes en anglais</a>.</p>
+</div>
+{% endif %}

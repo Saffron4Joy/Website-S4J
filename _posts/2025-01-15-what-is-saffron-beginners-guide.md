@@ -7,6 +7,7 @@ image: /assets/images/blog/saffron-guide.png
 description: "Everything you need to know about saffron - from its origins and health benefits to how to buy, store, and use this precious spice."
 author: Saffron for Joy
 read_time: 8
+lang: en
 ---
 
 If you've ever wondered what makes saffron so special - and so expensive - you're not alone. This vibrant spice has captivated cooks, healers, and perfumers for over 3,000 years, and today we're diving deep into everything you need to know about the "red gold."

@@ -3,9 +3,16 @@ layout: page
 title: Blog
 subtitle: Stories, Tips & Inspiration
 permalink: /blog/
+lang: en
 description: "Explore our blog for saffron recipes, wellness tips, cooking guides, and inspiration for a healthier lifestyle."
 keywords: "saffron blog, wellness tips, cooking blog, healthy lifestyle"
 ---
+
+{% assign lang = page.lang | default: "en" %}
+{% assign posts = site.posts | where: "lang", lang %}
+{% if posts.size == 0 %}
+  {% assign posts = site.posts | where_exp: "post", "post.lang == nil" %}
+{% endif %}
 
 <div class="blog-filters">
   <div class="blog-search">
@@ -21,7 +28,7 @@ keywords: "saffron blog, wellness tips, cooking blog, healthy lifestyle"
 </div>
 
 <div class="posts-grid">
-  {% for post in site.posts %}
+  {% for post in posts %}
   <article class="post-card" data-category="{{ post.categories | first }}">
     <a href="{{ post.url | relative_url }}" class="post-card-link">
       <div class="post-card-image">
@@ -56,7 +63,7 @@ keywords: "saffron blog, wellness tips, cooking blog, healthy lifestyle"
   {% endfor %}
 </div>
 
-{% if site.posts.size == 0 %}
+{% if posts.size == 0 %}
 <div class="text-center mt-3xl">
   <p>No blog posts yet. Check back soon!</p>
 </div>

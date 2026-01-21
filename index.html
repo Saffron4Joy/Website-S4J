@@ -97,7 +97,8 @@ keywords: "saffron recipes, wellness, health benefits, saffron benefits, cooking
     </div>
 
     <div class="posts-grid">
-      {% for post in site.posts limit:3 %}
+      {% assign en_posts = site.posts | where: "lang", "en" %}
+      {% for post in en_posts limit:3 %}
         {% include post-card.html post=post %}
       {% endfor %}
     </div>

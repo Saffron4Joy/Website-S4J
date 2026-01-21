@@ -7,6 +7,7 @@ image: /assets/images/blog/winter-saffron.png
 description: "Embrace the cozy season with these warming saffron recipes perfect for cold winter days. From hearty stews to golden drinks."
 author: Saffron for Joy
 read_time: 6
+lang: en
 ---
 
 There's something magical about cooking with saffron in winter. As the days grow shorter and the temperature drops, the warm golden hue and aromatic fragrance of saffron brings both physical warmth and emotional comfort to the table.

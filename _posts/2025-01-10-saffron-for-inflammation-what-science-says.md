@@ -7,6 +7,7 @@ image: /assets/images/blog/saffron-inflammation.png
 description: "A deep dive into the scientific research on saffron's anti-inflammatory properties and how it may help with joint pain and overall wellness."
 author: Saffron for Joy
 read_time: 7
+lang: en
 ---
 
 Inflammation is at the root of many chronic health conditions, from arthritis to heart disease. As more people seek natural ways to manage inflammation, saffron has emerged as a promising option backed by growing scientific evidence.

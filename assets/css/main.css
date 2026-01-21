@@ -1035,6 +1035,13 @@ p:last-child {
   align-self: start;
 }
 
+@media (max-width: 768px) {
+  .recipe-sidebar {
+    position: relative;
+    top: 0;
+  }
+}
+
 .recipe-ingredients {
   background-color: var(--color-surface);
   padding: var(--space-xl);

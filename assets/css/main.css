@@ -1023,12 +1023,6 @@ p:last-child {
   gap: var(--space-3xl);
 }
 
-@media (max-width: 768px) {
-  .recipe-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 .recipe-sidebar {
   position: sticky;
   top: 100px;
@@ -1036,9 +1030,17 @@ p:last-child {
 }
 
 @media (max-width: 768px) {
+  .recipe-grid {
+    display: block;
+  }
+
   .recipe-sidebar {
-    position: relative;
-    top: 0;
+    position: static;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .recipe-main {
+    clear: both;
   }
 }
 
@@ -1047,6 +1049,8 @@ p:last-child {
   padding: var(--space-xl);
   border-radius: var(--radius-lg);
   margin-bottom: var(--space-xl);
+  position: relative;
+  z-index: 1;
 }
 
 .recipe-ingredients h2 {
@@ -1090,6 +1094,10 @@ p:last-child {
 .recipe-nutrition li {
   font-size: var(--font-size-sm);
   color: var(--color-text-light);
+}
+
+.recipe-main {
+  background-color: var(--color-background);
 }
 
 .recipe-main h2 {
